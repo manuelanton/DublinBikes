@@ -1,0 +1,92 @@
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7fb;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter {
+    margin-bottom: 20px;
+  }
+  
+  .filter-inputs {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .filter-field,
+  .filter-operator,
+  .filter-value {
+    flex: 1;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .add-filter {
+    background-color: #007bff;
+    margin-top: 10px;
+  }
+  
+  .add-filter:hover {
+    background-color: #0069d9;
+  }
+  
+  .submit-filter {
+    background-color: #28a745;
+    margin-top: 20px;
+  }
+  
+  .submit-filter:hover {
+    background-color: #218838;
+  }
+  
+  .remove-filter {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .remove-filter:hover {
+    background-color: #c82333;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
