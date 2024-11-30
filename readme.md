@@ -46,7 +46,7 @@ Key Technologies:
 
 How to Run:
 
-    Navigate to the frontend/my-app directory:
+    Navigate to the frontend/ directory:
 
 cd Noloco/frontend/
 
