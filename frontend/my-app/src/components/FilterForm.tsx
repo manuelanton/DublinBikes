@@ -21,8 +21,7 @@ const FilterForm: React.FC<FilterFormProps> = ({
   };
 
   const handleRemoveFilter = (index: number) => {
-    const newFilters = filters.filter((_, i) => i !== index);
-    setFilters(newFilters);
+    setFilters(filters.filter((_, i) => i !== index));
   };
 
   const handleInputChange = (
@@ -35,20 +34,28 @@ const FilterForm: React.FC<FilterFormProps> = ({
     setFilters(newFilters);
   };
 
+  const parseValue = (value: string): any => {
+    if (value.toLowerCase() === "true") return true;
+    if (value.toLowerCase() === "false") return false;
+    if (!isNaN(Number(value))) return Number(value);
+    return value;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const where: { [key: string]: any } = {};
 
     filters.forEach((filter) => {
-      if (filter.fieldName && filter.value) {
-        if (filter.fieldName === "status") {
-          where[filter.fieldName] = { eq: filter.value };
-        } else if (filter.operator && filter.value) {
-          const value = isNaN(Number(filter.value))
-            ? filter.value
-            : Number(filter.value);
-          where[filter.fieldName] = { [filter.operator]: value };
+      const { fieldName, operator, value } = filter;
+
+      if (fieldName && value) {
+        const parsedValue = parseValue(value);
+
+        if (fieldName === "status") {
+          where[fieldName] = { eq: parsedValue };
+        } else if (operator) {
+          where[fieldName] = { [operator]: parsedValue };
         }
       }
     });

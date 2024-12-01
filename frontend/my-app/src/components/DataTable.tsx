@@ -6,6 +6,8 @@ interface DataTableProps {
 }
 
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
+  const headers = data.length > 0 ? Object.keys(data[0]) : [];
+
   return (
     <div className="data-table-container">
       <h2>Data:</h2>
@@ -15,21 +17,17 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
         <table className="data-table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Available Bikes</th>
-              <th>Available Bike Stands</th>
-              <th>Status</th>
-              <th>Address</th>
+              {headers.map((header) => (
+                <th key={header}>{header}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.availableBikes}</td>
-                <td>{item.availableBikeStands}</td>
-                <td>{item.status}</td>
-                <td>{item.address}</td>
+            {data.map((item, index) => (
+              <tr key={index}>
+                {headers.map((key) => (
+                  <td key={key}>{item[key]}</td>
+                ))}
               </tr>
             ))}
           </tbody>

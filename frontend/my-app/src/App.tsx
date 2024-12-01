@@ -7,7 +7,23 @@ import DataTable from "./components/DataTable";
 const App: React.FC = () => {
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState<{ [key: string]: any }>({});
-  const fields = ["availableBikes", "status", "location"];
+  const fields = [
+    "id",
+    "harvestTimeUtc",
+    "stationId",
+    "availableBikeStands",
+    "bikeStands",
+    "availableBikes",
+    "banking",
+    "bonus",
+    "lastUpdate",
+    "status",
+    "address",
+    "name",
+    "latitude",
+    "longitude",
+  ];
+
   const operators = ["gt", "lt", "eq"];
 
   const handleFilterSubmit = async (filters: {
