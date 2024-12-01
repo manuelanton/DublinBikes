@@ -87,3 +87,5 @@ What I Would Have Done with More Time:
     Implement tests for both frontend and backend.
     Improve styling for better UI/UX.
     Consider separating frontend components into smaller reusable components.
+
+![image](https://github.com/user-attachments/assets/a3091af8-e2f3-4454-9b12-9f0aabc51756)
